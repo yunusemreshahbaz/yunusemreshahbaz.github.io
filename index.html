@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yunus Emre Şahbaz | Computer Engineer</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --accent-color: #38bdf8;
+            --card-bg: #1e293b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 60px 0;
+            border-bottom: 1px solid #334155;
+        }
+        h1 { margin: 0; font-size: 2.5rem; color: var(--accent-color); }
+        .subtitle { font-size: 1.2rem; color: #94a3b8; margin-top: 10px; }
+        .social-links { margin-top: 20px; }
+        .social-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 10px;
+            border: 1px solid #334155;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .social-links a:hover { border-color: var(--accent-color); color: var(--accent-color); }
+        
+        section { margin: 40px 0; }
+        h2 { border-left: 4px solid var(--accent-color); padding-left: 10px; margin-bottom: 20px; }
+        
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        .project-title { font-size: 1.2rem; font-weight: bold; color: var(--accent-color); }
+        .tech-stack {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .tech-tag {
+            background-color: #334155;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+        .skill-item {
+            background-color: var(--card-bg);
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Yunus Emre Şahbaz</h1>
+            <div class="subtitle">M.Sc. Student in Computer Engineering & Full Stack Developer</div>
+            <div class="social-links">
+                <a href="https://github.com/yunusemreshahbaz" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/yunusemres" target="_blank">LinkedIn</a>
+                <a href="mailto:yunusemreshahbaz@gmail.com">Email</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a Computer Engineering Master's student at Ege University, specializing in Artificial Intelligence and Data Science. 
+                I have a passion for building autonomous systems, from local AI agents like "Courtney" to ontology-based recommendation systems. 
+                I love solving complex problems using Python, Django, and modern web technologies.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">Django</div>
+                <div class="skill-item">PostgreSQL</div>
+                <div class="skill-item">Docker</div>
+                <div class="skill-item">Unity</div>
+                <div class="skill-item">Flutter</div>
+                <div class="skill-item">Git</div>
+                <div class="skill-item">Linux</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-title">Courtney: Local AI Assistant</div>
+                <p>A voice and text-based smart assistant running entirely on local hardware using Llama 3.1. Features RAG architecture with ChromaDB and custom web scraping capabilities.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">LangChain</span>
+                    <span class="tech-tag">Llama 3.1</span>
+                    <span class="tech-tag">Coqui TTS</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Ontology-Based Recommendation System</div>
+                <p>M.Sc. Thesis project developing a hybrid recommendation system for smart libraries using Neo4j and Semantic Web technologies.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Neo4j</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">Ontology</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-title">Customizable Task Management System</div>
+                <p>A mobile application for small businesses to manage tasks and track employee performance efficiently.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Flutter</span>
+                    <span class="tech-tag">Dart</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Docker</span>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 50px; font-size: 0.8rem; color: #64748b;">
+            <p>&copy; 2026 Yunus Emre Şahbaz. Built with simple HTML & CSS.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
