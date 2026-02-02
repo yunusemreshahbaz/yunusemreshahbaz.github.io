@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Yunus Emre Şahbaz | AI & Software Engineer</title>
+
+    <meta property="og:title" content="Yunus Emre Şahbaz | AI & Software Engineer">
+    <meta property="og:description" content="M.Sc. Computer Engineering Student building intelligent agents and backend systems. View my portfolio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yunusemreshahbaz.github.io">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -45,6 +52,7 @@
             padding: 80px 0;
             text-align: center;
             background: radial-gradient(circle at top, #1e293b 0%, #0f172a 70%);
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
         .profile-img-container {
@@ -187,6 +195,29 @@
             border-top: 1px solid var(--border);
             margin-top: 40px;
         }
+
+        /* Animasyon Kodları (En altta) */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animasyonları bölümlere sırayla uygula */
+        #skills { 
+            opacity: 0; /* Başlangıçta görünmez */
+            animation: fadeInUp 0.8s ease-out 0.3s forwards; /* 0.3sn gecikmeyle gel */
+        }
+        #projects { 
+            opacity: 0; 
+            animation: fadeInUp 0.8s ease-out 0.6s forwards; /* 0.6sn gecikmeyle gel */
+        }
+
     </style>
 </head>
 <body>
