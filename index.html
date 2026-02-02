@@ -3,158 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yunus Emre Şahbaz | Computer Engineer</title>
+    <title>Yunus Emre Şahbaz | AI & Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --bg-color: #0f172a;
-            --text-color: #e2e8f0;
-            --accent-color: #38bdf8;
-            --card-bg: #1e293b;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8; /* Light Blue */
+            --accent-hover: #0ea5e9;
+            --border: #334155;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
         }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        /* Layout */
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
+
+        /* Hero Section */
         header {
+            padding: 80px 0;
             text-align: center;
-            padding: 60px 0;
-            border-bottom: 1px solid #334155;
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 70%);
         }
-        h1 { margin: 0; font-size: 2.5rem; color: var(--accent-color); }
-        .subtitle { font-size: 1.2rem; color: #94a3b8; margin-top: 10px; }
-        .social-links { margin-top: 20px; }
-        .social-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 10px;
-            border: 1px solid #334155;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: all 0.3s;
+
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent);
+            background-color: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .social-links a:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         
-        section { margin: 40px 0; }
-        h2 { border-left: 4px solid var(--accent-color); padding-left: 10px; margin-bottom: 20px; }
-        
-        .project-card {
-            background-color: var(--card-bg);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid #334155;
+        /* Placeholder Icon if no image */
+        .profile-icon {
+            font-size: 80px;
+            color: var(--text-muted);
         }
-        .project-title { font-size: 1.2rem; font-weight: bold; color: var(--accent-color); }
-        .tech-stack {
-            margin-top: 10px;
+
+        h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
+        .title { color: var(--accent); font-size: 1.25rem; font-weight: 600; }
+        .bio { color: var(--text-muted); max-width: 600px; margin: 20px auto; }
+
+        .social-links { margin-top: 25px; }
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            margin: 0 5px;
             font-size: 0.9rem;
+            background: var(--bg-card);
         }
-        .tech-tag {
-            background-color: #334155;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-right: 5px;
+        .social-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
         }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+        /* Section Styling */
+        section { padding: 60px 0; }
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
             gap: 10px;
         }
-        .skill-item {
-            background-color: var(--card-bg);
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+            margin-left: 20px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+        }
+        .skill-card {
+            background: var(--bg-card);
+            padding: 15px;
+            border-radius: 8px;
             text-align: center;
-            padding: 10px;
-            border-radius: 5px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+        .skill-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .skill-icon { font-size: 24px; margin-bottom: 8px; color: var(--accent); }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        @media (min-width: 768px) {
+            .projects-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .folder-icon { font-size: 40px; color: var(--accent); }
+        .github-link { font-size: 20px; color: var(--text-muted); }
+        .github-link:hover { color: var(--text-main); }
+
+        .project-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
+        .project-desc { color: var(--text-muted); font-size: 0.95rem; flex-grow: 1; margin-bottom: 20px; }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.85rem;
+            font-family: monospace;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Yunus Emre Şahbaz</h1>
-            <div class="subtitle">M.Sc. Student in Computer Engineering & Full Stack Developer</div>
-            <div class="social-links">
-                <a href="https://github.com/yunusemreshahbaz" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/yunusemresahbaz" target="_blank">LinkedIn</a>
-                <a href="mailto:yunusemreshahbaz@gmail.com">Email</a>
+    <header>
+        <div class="container">
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Profile" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                <i class="fas fa-user-astronaut profile-icon" style="display:none"></i> 
             </div>
-        </header>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a Computer Engineering Master's student at Ege University, specializing in Artificial Intelligence and Data Science. 
-                I have a passion for building autonomous systems, from local AI agents like "Courtney" to ontology-based recommendation systems. 
-                I love solving complex problems using Python, Django and modern web technologies.
+            <h1>Yunus Emre Şahbaz</h1>
+            <div class="title">M.Sc. in Computer Engineering</div>
+            <p class="bio">
+                Building intelligent systems with <b>Python</b>, <b>AI</b>, and <b>Data Science</b>. 
+                Passionate about creating autonomous agents and solving complex backend challenges.
             </p>
-        </section>
+            <div class="social-links">
+                <a href="https://github.com/yunusemreshahbaz" target="_blank" class="social-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/yunusemresahbaz" target="_blank" class="social-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:yunusemreshahbaz@gmail.com" class="social-btn">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </header>
 
+    <div class="container">
         <section id="skills">
-            <h2>Technical Skills</h2>
+            <h2 class="section-title"><i class="fas fa-code"></i> Technical Arsenal</h2>
             <div class="skills-grid">
-                <div class="skill-item">Python</div>
-                <div class="skill-item">Django</div>
-                <div class="skill-item">C#</div>
-                <div class="skill-item">Flutter</div>
-                <div class="skill-item">Java</div>
-                <div class="skill-item">PostgreSQL</div>
-                <div class="skill-item">Docker</div>
-                <div class="skill-item">Unity</div>
-                <div class="skill-item">Git</div>
-                <div class="skill-item">Linux</div>
+                <div class="skill-card"><i class="fab fa-python skill-icon"></i><br>Python</div>
+                <div class="skill-card"><i class="fas fa-database skill-icon"></i><br>PostgreSQL</div>
+                <div class="skill-card"><i class="fab fa-docker skill-icon"></i><br>Docker</div>
+                <div class="skill-card"><i class="fas fa-cubes skill-icon"></i><br>Neo4j</div>
+                <div class="skill-card"><i class="fas fa-brain skill-icon"></i><br>LangChain</div>
+                <div class="skill-card"><i class="fab fa-unity skill-icon"></i><br>Unity</div>
+                <div class="skill-card"><i class="fab fa-linux skill-icon"></i><br>Linux</div>
+                <div class="skill-card"><i class="fab fa-git-alt skill-icon"></i><br>Git</div>
             </div>
         </section>
 
         <section id="projects">
-            <h2>Featured Projects</h2>
-            
-            <div class="project-card">
-                <div class="project-title">Courtney: Local AI Assistant</div>
-                <p>A voice and text-based smart assistant running entirely on local hardware using Llama 3.1. Features RAG architecture with ChromaDB and custom web scraping capabilities.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">LangChain</span>
-                    <span class="tech-tag">Llama 3.1</span>
-                    <span class="tech-tag">Coqui TTS</span>
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="far fa-folder-open folder-icon"></i>
+                        <a href="#" class="github-link"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h3 class="project-title">Courtney: Local AI Assistant</h3>
+                    <p class="project-desc">
+                        A voice-enabled smart assistant running locally using <b>Llama 3.1</b>. 
+                        Includes a <b>RAG architecture</b> for document analysis and a custom web scraping module 
+                        built to bypass anti-bot protections.
+                    </p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>LangChain</span>
+                        <span>ChromaDB</span>
+                        <span>Coqui TTS</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <div class="project-title">Ontology-Based Recommendation System</div>
-                <p>M.Sc. Thesis project developing a hybrid recommendation system for smart libraries using Neo4j and Semantic Web technologies.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Neo4j</span>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">NLP</span>
-                    <span class="tech-tag">Ontology</span>
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-book folder-icon"></i>
+                        <span class="github-link"><i class="fas fa-university"></i></span>
+                    </div>
+                    <h3 class="project-title">Ontology-Based Rec. System</h3>
+                    <p class="project-desc">
+                        M.Sc. Thesis project utilizing <b>Neo4j Graph Database</b> and Semantic Web technologies 
+                        to build a hybrid recommendation system for smart libraries.
+                    </p>
+                    <div class="tech-stack">
+                        <span>Neo4j</span>
+                        <span>NLP</span>
+                        <span>Ontology</span>
+                        <span>Data Modeling</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="project-card">
-                <div class="project-title">Customizable Task Management System</div>
-                <p>A mobile application for small businesses to manage tasks and track employee performance efficiently.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Flutter</span>
-                    <span class="tech-tag">Dart</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">Docker</span>
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-shield-alt folder-icon"></i>
+                        <a href="https://github.com/yunusemreshahbaz/CE340_Nmap-Scapy-Arp" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h3 class="project-title">Network Security Analysis</h3>
+                    <p class="project-desc">
+                        Implemented ARP Spoofing attacks and network scanning using <b>Python & Scapy</b>. 
+                        Analyzed packet traffic with Wireshark to understand vulnerabilities in physical networks.
+                    </p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>Scapy</span>
+                        <span>Wireshark</span>
+                        <span>Nmap</span>
+                    </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-mobile-alt folder-icon"></i>
+                        <a href="https://github.com/yunusemreshahbaz/Customizable-Task-Management-System" target="_blank" class="github-link"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h3 class="project-title">Task Management System</h3>
+                    <p class="project-desc">
+                        A customizable mobile application for small businesses. Features task tracking, 
+                        user permissions, and a backend powered by PostgreSQL and Docker.
+                    </p>
+                    <div class="tech-stack">
+                        <span>Flutter</span>
+                        <span>PostgreSQL</span>
+                        <span>Docker</span>
+                        <span>Dart</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-gamepad folder-icon"></i>
+                        <a href="#" class="github-link"><i class="fas fa-link"></i></a>
+                    </div>
+                    <h3 class="project-title">Dungeon Fighter</h3>
+                    <p class="project-desc">
+                        A pixel-art dungeon crawler game developed in Unity. Implemented physics-based 
+                        combat mechanics, enemy AI, and animation state machines.
+                    </p>
+                    <div class="tech-stack">
+                        <span>C#</span>
+                        <span>Unity</span>
+                        <span>Aseprite</span>
+                        <span>Game Physics</span>
+                    </div>
+                </div>
+
             </div>
         </section>
-
-        <footer style="text-align: center; margin-top: 50px; font-size: 0.8rem; color: #64748b;">
-            <p>&copy; 2026 Yunus Emre Şahbaz. Built with simple HTML & CSS.</p>
-        </footer>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Yunus Emre Şahbaz. Designed & Built by me.</p>
+    </footer>
 
 </body>
 </html>
